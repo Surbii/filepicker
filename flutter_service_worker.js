@@ -38,7 +38,7 @@ self.addEventListener("install", (event) => {
   self.skipWaiting();
   return event.waitUntil(
     caches.open(TEMP).then((cache) => {
-      return cache.addAll(
+       cache.addAll(
         CORE.map((value) => new Request(value, {'cache': 'reload'})));
     })
   );
